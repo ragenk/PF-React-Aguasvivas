@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from "./pages/Home"
+import Fotografia from "./pages/Fotografia"
+import Esculturas from './pages/Esculturas'
+import Pinturas from './pages/Pinturas'
+import Error from './pages/Error'
+import Layout from './pages/Layout'
+import Escultura from './components/Escultura/Escultura'
+import "bulma/css/bulma.css"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout/>}>                    
+                    <Route index element={<Home/>}/>
+                    <Route path="esculturas" element={<Esculturas/>}/>
+                    <Route path="esculturas/:productoId" element={<Escultura/>}/>
+                    <Route path="fotografia" element={<Fotografia/>}/>
+                    <Route path="pinturas" element={<Pinturas/>}/>
+                    <Route path="*" element={<Error/>}/>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+            
+    );    
 }
 
 export default App;
