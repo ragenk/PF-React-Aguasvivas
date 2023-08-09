@@ -3,7 +3,7 @@
 function Error(){
     return (
         <div>
-            <h1>Pagina Error</h1>
+            <h1>Error 404</h1>
         </div>
     )
 }

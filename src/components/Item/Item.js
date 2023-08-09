@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-function ProductCard({title, description, image, id}){
+
+function Item({title, description, image, id}){
 
     return (        
         <div>
@@ -11,12 +12,11 @@ function ProductCard({title, description, image, id}){
                 </div>
                 <div className="card-content">
                     <div className="media">
-                        <div className="media-content">
+                        <div className="media-content has-text-centered">
                             <p className="title is-4">{title}</p>
-                            <p className="subtitle is-6">{description}</p>
                         </div>
                     </div>
-                    <div className="content has-text-right">
+                    <div className="content has-text-centered">
                         <Link className="button is-info" to={`/esculturas/${id}`}>Ver Mas Detalles</Link>
                     </div>
                 </div>
@@ -25,4 +25,4 @@ function ProductCard({title, description, image, id}){
     )
 }
 
-export default ProductCard
+export default Item

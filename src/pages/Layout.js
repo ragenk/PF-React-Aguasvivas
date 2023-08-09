@@ -13,6 +13,11 @@ function Layout(){
                 <NavBar />
             </div>
             <Outlet/>
+            <footer className="hero is-info is-light mt-6">
+                <div className="content has-text-centered m-3">
+                    <p><strong>JairolArt Shop</strong> by Rafael Aguasvivas.</p>
+                </div>
+            </footer>
         </div>
     )
 }
